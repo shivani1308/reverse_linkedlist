@@ -1,0 +1,37 @@
+//Method to reverse a linked list
+   void reverse(){
+ 
+    /* Declare pointer to node type. */
+ 
+    struct node *prev, *next, *current;
+ 
+    /* Points to head.*/
+ 
+    current = head;
+ 
+   /* Initialize prev pointer to NULL. */
+    prev = NULL;
+ 
+ 
+    /* While it's not point to NULL. */
+ 
+    while(current != NULL){
+ 
+        /* Points to next node . */
+        next = current->next;
+ 
+        /* Points to prev.So the first element points to NULL which becomes last 
+           when we reverse a linked list.*/
+ 
+        current->next = prev;
+ 
+        prev = current;
+ 
+        current=next;
+    }
+ 
+    /* Assign to head. */
+ 
+    head = prev;
+ 
+}
